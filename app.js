@@ -1,8 +1,10 @@
 const express = require('express');
-const mysql = require('mysql2');
+const connectDB = require('./db');
 
 const app = express();
 app.use(express.json());
+
+connectDB();
 
 // Configuración de la conexión a la base de datos
 const db = mysql.createConnection({
@@ -18,6 +20,17 @@ db.connect((err) => {
     console.log('Conectado a la base de datos MySQL');
 });
 
+// Definir el esquema de Mongoose para los servicios
+const serviceSchema = new mongoose.Schema({
+    name: { type: String, required: true, maxlength: 80 },
+    description: { type: String, required: true, maxlength: 150 },
+    price: { type: Number, required: true, max: 1e6 },
+    category: String,
+    img: String
+  });
+
+const Service = mongoose.model('Service', serviceSchema);
+
 // Middleware para permitir CORS
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
@@ -27,109 +40,85 @@ app.use((req, res, next) => {
 });
 
 // Rutas
-app.get('/api/services', (req, res) => {
-    const { id, category, name } = req.query;
-    
-    let query;
-    if (id && category) {
-        query = 'SELECT * FROM services WHERE id = ? AND category = ?';
-        db.query(query, [id, category], (err, results) => {
-            if (err) return res.status(500).json(err);
-            res.json(results);
-        });
-    } else if (name && category) {
-        query = 'SELECT * FROM services WHERE name = ? AND category = ?';
-        db.query(query, [name, category], (err, results) => {
-            if (err) return res.status(500).json(err);
-            res.json(results);
-        });
-    } else if (name) {
-        query = 'SELECT * FROM services WHERE name = ?';
-        db.query(query, [name], (err, results) => {
-            if (err) return res.status(500).json(err);
-            res.json(results);
-        });
-    } else if (category) {
-        query = 'SELECT * FROM services WHERE category = ?';
-        db.query(query, [category], (err, results) => {
-            if (err) return res.status(500).json(err);
-            res.json(results);
-        });
-    } else {
-        query = 'SELECT * FROM services';
-        db.query(query, (err, results) => {
-            if (err) return res.status(500).json(err);
-            res.json(results);
-        });
+app.get('/api/services', async (req, res) => {
+    try {
+      const { id, category, name } = req.query;
+      let query = {};
+  
+      if (id) query._id = id;
+      if (category) query.category = category;
+      if (name) query.name = name;
+  
+      const services = await Service.find(query);
+      res.json(services);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
-});
-
-app.post('/api/services', (req, res) => {
-    const { name, description, price, category, img } = req.body;
-
-    if (!name || name.trim() === '' || name.length > 80) {
+  });
+  
+  app.post('/api/services', async (req, res) => {
+    try {
+      const { name, description, price, category, img } = req.body;
+  
+      if (!name || name.trim() === '' || name.length > 80) {
         return res.json(['error', 'El nombre del producto no debe estar vacío y no debe de tener más de 80 caracteres']);
-    }
-    if (!description || description.trim() === '' || description.length > 150) {
+      }
+      if (!description || description.trim() === '' || description.length > 150) {
         return res.json(['error', 'La descripción del producto no debe estar vacía y no debe de tener más de 150 caracteres']);
-    }
-    if (!price || isNaN(price) || price.length > 20) {
+      }
+      if (!price || isNaN(price) || price.length > 20) {
         return res.json(['error', 'El precio del producto no debe estar vacío, debe ser de tipo numérico y no tener más de 20 caracteres']);
+      }
+  
+      const newService = new Service({ name, description, price, category, img });
+      await newService.save();
+      res.status(201).json(['success', 'Producto guardado', newService]);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
-
-    const query = 'INSERT INTO services (name, description, price, category, img) VALUES (?, ?, ?, ?, ?)';
-    db.query(query, [name, description, price, category, img], (err, results) => {
-        if (err) return res.status(500).json(err);
-        res.status(201).json(['success', 'Producto guardado', { id: results.insertId, name, description, price, category, img }]);
-    });
-});
-
-app.put('/api/services/:id', (req, res) => {
-    const id = req.params.id;
-    const { name, description, price } = req.body;
-
-    if (!id) {
-        return res.json(['error', 'El ID del producto no debe estar vacío']);
-    }
-    if (!name || name.trim() === '' || name.length > 80) {
+  });
+  
+  app.put('/api/services/:id', async (req, res) => {
+    try {
+      const id = req.params.id;
+      const { name, description, price } = req.body;
+  
+      if (!name || name.trim() === '' || name.length > 80) {
         return res.json(['error', 'El nombre del producto no debe estar vacío y no debe de tener más de 80 caracteres']);
-    }
-    if (!description || description.trim() === '' || description.length > 150) {
+      }
+      if (!description || description.trim() === '' || description.length > 150) {
         return res.json(['error', 'La descripción del producto no debe estar vacía y no debe de tener más de 150 caracteres']);
-    }
-    if (!price || isNaN(price) || price.length > 20) {
+      }
+      if (!price || isNaN(price) || price.length > 20) {
         return res.json(['error', 'El precio del producto no debe estar vacío, debe ser de tipo numérico y no tener más de 20 caracteres']);
+      }
+  
+      const updatedService = await Service.findByIdAndUpdate(id, { name, description, price }, { new: true });
+      if (!updatedService) {
+        return res.json(['error', 'No existe el producto con ID ' + id]);
+      }
+      res.json(['success', 'Producto actualizado', updatedService]);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
-
-    const query = 'UPDATE services SET name = ?, description = ?, price = ? WHERE id = ?';
-    db.query(query, [name, description, price, id], (err, results) => {
-        if (err) return res.status(500).json(err);
-        if (results.affectedRows === 0) {
-            return res.json(['error', 'No existe el producto con ID ' + id]);
-        }
-        res.json(['success', 'Producto actualizado']);
-    });
-});
-
-app.delete('/api/services/:id', (req, res) => {
-    const id = req.params.id;
-
-    if (!id) {
-        return res.json(['error', 'El ID del producto no debe estar vacío']);
+  });
+  
+  app.delete('/api/services/:id', async (req, res) => {
+    try {
+      const id = req.params.id;
+      const deletedService = await Service.findByIdAndDelete(id);
+  
+      if (!deletedService) {
+        return res.json(['error', 'No existe el producto con ID ' + id]);
+      }
+      res.json(['success', 'Producto eliminado']);
+    } catch (err) {
+      res.status(500).json({ error: err.message });
     }
-
-    const query = 'DELETE FROM services WHERE id = ?';
-    db.query(query, [id], (err, results) => {
-        if (err) return res.status(500).json(err);
-        if (results.affectedRows === 0) {
-            return res.json(['error', 'No existe el producto con ID ' + id]);
-        }
-        res.json(['success', 'Producto eliminado']);
-    });
-});
-
-// Iniciar el servidor
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
+  });
+  
+  // Iniciar el servidor
+  const PORT = process.env.PORT || 3000;
+  app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
-});
+  });
