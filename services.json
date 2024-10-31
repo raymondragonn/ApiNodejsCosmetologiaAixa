@@ -1,0 +1,532 @@
+[{
+  "_id": 1,
+  "name": "Glúteos",
+  "description": "Ayuda a tonificar y reafirmar la zona de los glúteos mediante el uso de aparatología medica y activos específicos.",
+  "price": 450.00,
+  "images": {
+    "primary": "img1_gluteos.jpg",
+    "secondary": "img2_gluteos.jpg"
+  },
+  "category": "Corporales",
+  "information": "El procedimiento inicia con una evaluación de la zona. Se aplica un gel conductor especial y se utiliza aparatología médica que combina radiofrecuencia y ultrasonido. Duración: 60 minutos. Se recomiendan 8-10 sesiones para resultados óptimos."
+},
+{
+  "_id": 2,
+  "name": "Reductivo",
+  "description": "Terapia que ayuda a movilizar el tejido adiposos en personas con sobrepeso, y grasas localizadas reduciendo medidas",
+  "price": 4000.00,
+  "images": {
+    "primary": "img1_reductivo.jpg",
+    "secondary": "img2_reductivo.jpg"
+  },
+  "category": "Corporales",
+  "information": "Sesión que combina ultrasonido cavitacional, radiofrecuencia y masaje modelador. Se inicia con diagnóstico y mediciones. Incluye toma de medidas antes y después. Duración: 90 minutos. Plan personalizado de 10-12 sesiones."
+},
+{
+  "_id": 3,
+  "name": "Anticelulitico",
+  "description": "Procedimiento efectivo para eliminar la grasa localizada favoreciendo la ruptura de los adipocitos (células grasas).",
+  "price": 4000.00,
+  "images": {
+    "primary": "img1_anticelulitico.jpg",
+    "secondary": "img2_anticelulitico.jpg"
+  },
+  "category": "Corporales",
+  "information": "Tratamiento que inicia con diagnóstico de grado de celulitis. Combina vacumterapia, ultrasonido y masaje específico anticelulítico. Se aplican principios activos lipolíticos. Duración: 75 minutos. Serie de 12 sesiones recomendadas."
+},
+{
+  "_id": 4,
+  "name": "Reafirmante",
+  "description": "Tratamiento no invasivo que combina tratamientos con aparatología médica y tratamientos manuales para acceder de manera profunda, cómoda y segura a las diferentes capas del tejido.",
+  "price": 4000.00,
+  "images": {
+    "primary": "img1_reafirmante.jpg",
+    "secondary": "img2_reafirmante.jpg"
+  },
+  "category": "Corporales",
+  "information": "Procedimiento que incluye exfoliación previa, radiofrecuencia multipolar y masaje reafirmante. Se aplican principios activos tensores. Duración: 90 minutos. Se recomienda plan de 8-10 sesiones."
+},
+{
+  "_id": 5,
+  "name": "Limpieza Profunda de Espalda",
+  "description": "Ayuda a la eliminación de las impurezas, barritos y espinillas, utilizando productos con principios activos saponificantes y secantes, finalizando con una mascarilla secante y crema hidratante acompañada de un masaje relajante.",
+  "price": 450.00,
+  "images": {
+    "primary": "img1_limpieza_espalda.jpg",
+    "secondary": "img2_limpieza_espalda.jpg"
+  },
+  "category": "Corporales",
+  "information": "Incluye limpieza, exfoliación, vapor, extracción de impurezas, mascarilla purificante y masaje final. Duración: 60 minutos. Mantenimiento recomendado mensual."
+},
+{
+  "_id": 6,
+  "name": "Exfoliación",
+  "description": "Ayuda a renovar la epidermis y conservarla en buen estado y resplandeciente.",
+  "price": 700.00,
+  "images": {
+    "primary": "img1_exfoliacion.jpg",
+    "secondary": "img2_exfoliacion.jpg"
+  },
+  "category": "Corporales",
+  "information": "Tratamiento corporal completo que incluye exfoliación con productos naturales, retiro con toallas calientes y masaje hidratante. Duración: 45 minutos. Ideal cada 15-20 días."
+},
+{
+  "_id": 7,
+  "name": "Baño de Novia",
+  "description": "Es el método ideal para eliminar las células muertas, rejuveneciendo la piel, dejándola suave y radiante.",
+  "price": 950.00,
+  "images": {
+    "primary": "img1_bano_novia.jpg",
+    "secondary": "img2_bano_novia.jpg"
+  },
+  "category": "Corporales",
+  "information": "Ritual completo que incluye exfoliación corporal, envoltura hidratante, masaje relajante y tratamiento facial express. Duración: 120 minutos. Incluye kit especial para novia."
+},
+{
+  "_id": 8,
+  "name": "Radiofrecuencia",
+  "description": "Ayuda en la formación de nuevo colágeno, favorece el drenaje linfático, la circulación de la piel y el tejido subcutáneo.",
+  "price": 600.00,
+  "images": {
+    "primary": "img1_radiofrecuencia_corporal.jpg",
+    "secondary": "img2_radiofrecuencia_corporal.jpg"
+  },
+  "category": "Corporales",
+  "information": "Tratamiento que utiliza radiofrecuencia multipolar. Incluye gel conductor especial y masaje posterior. Duración: 60 minutos. Se recomienda serie de 8-10 sesiones."
+},
+{
+  "_id": 9,
+  "name": "Drenaje Linfático",
+  "description": "Masaje, suave y ligero, que se aplica sobre el sistema circulatorio y cuyo objetivo es movilizar los líquidos del organismo para favorecer la eliminación de las sustancias de desecho que se acumulan en el líquido que ocupa el espacio entre las células",
+  "price": 400.00,
+  "images": {
+    "primary": "img1_drenaje.jpg",
+    "secondary": "img2_drenaje.jpg"
+  },
+  "category": "Corporales",
+  "information": "Técnica específica de masaje que sigue el recorrido del sistema linfático. Incluye aceites especiales drenantes. Duración: 60 minutos. Se recomienda serie de 6-8 sesiones."
+},
+{
+  "_id": 10,
+  "name": "Mesoterapia Virtual",
+  "description": "Tratamiento sin agujas y sin dolor para tratar celulitis, flacidez, envejecimiento cutáneo o estrías.",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_mesoterapia.jpg",
+    "secondary": "img2_mesoterapia.jpg"
+  },
+  "category": "Corporales",
+  "information": "Tecnología que permite la penetración transdérmica de principios activos sin agujas. Incluye diagnóstico y productos específicos según condición. Duración: 45 minutos. Serie de 8-12 sesiones recomendadas."
+},
+{
+  "_id": 11,
+  "name": "Limpieza Facial Profunda",
+  "description": "Mejora el aspecto de la piel, corrige la dilatación de los poros, elimina las células más superficiales y extrae los famosos \"puntos negros\".",
+  "price": 350.00,
+  "images": {
+    "primary": "img1_limpieza_facial.jpg",
+    "secondary": "img2_limpieza_facial.jpg"
+  },
+  "category": "Faciales",
+  "information": "Incluye desmaquillado, exfoliación, vapor, extracción, alta frecuencia, mascarilla y crema final. Duración: 75 minutos. Recomendado cada 28-30 días."
+},
+{
+  "_id": 12,
+  "name": "Limpieza Facial + Microdermo",
+  "description": "Elimina las capas mas superficiales de la piel, ideal para mantener la piel joven, suave y limpia.",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_limpieza_microdermo.jpg",
+    "secondary": "img2_limpieza_microdermo.jpg"
+  },
+  "category": "Faciales",
+  "information": "Combina limpieza profunda tradicional con microdermoabrasión con punta de diamante. Incluye mascarilla post-tratamiento. Duración: 90 minutos. Se recomienda cada 1-2 meses."
+},
+{
+  "_id": 13,
+  "name": "Radiofrecuencia Facial",
+  "description": "Combate de manera efectiva la flacidez y regenera el colágeno para lucir una piel firme y tersa.",
+  "price": 550.00,
+  "images": {
+    "primary": "img1_radiofrecuencia_facial.jpg",
+    "secondary": "img2_radiofrecuencia_facial.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tratamiento con radiofrecuencia multipolar, incluye limpieza previa y mascarilla nutritiva posterior. Duración: 60 minutos. Serie de 8-10 sesiones recomendadas."
+},
+{
+  "_id": 14,
+  "name": "Ultrasonido",
+  "description": "Ayuda a la prevención de arrugas mediante la regeneración de la elastina, luciendo una piel más hidratada.",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_ultrasonido_facial.jpg",
+    "secondary": "img2_ultrasonido_facial.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tecnología ultrasónica que favorece la penetración de principios activos. Incluye diagnóstico y productos específicos. Duración: 45 minutos. Serie de 6-8 sesiones sugeridas."
+},
+{
+  "_id": 15,
+  "name": "Mascara Led",
+  "description": "Rejuvenece las células de la piel, aumentando la hidratación de manera inmediata, reduciendo enrojecimiento e inflamación para lucir un rostro más joven y saludable.",
+  "price": 350.00,
+  "images": {
+    "primary": "img1_mascara_led.jpg",
+    "secondary": "img2_mascara_led.jpg"
+  },
+  "category": "Faciales",
+  "information": "Fototerapia LED con diferentes colores según necesidad. Incluye limpieza previa y mascarilla potenciadora. Duración: 45 minutos. Series de 6-12 sesiones según condición."
+},
+{
+  "_id": 16,
+  "name": "Hidratación",
+  "description": "Consigue una hidratación extra y el equilibrio de la piel obteniendo de forma inmediata un cutis sedoso y luminoso.",
+  "price": 350.00,
+  "images": {
+    "primary": "img1_hidratacion_facial.jpg",
+    "secondary": "img2_hidratacion_facial.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tratamiento intensivo con productos hidratantes y vitaminas. Incluye masaje facial drenante. Duración: 60 minutos. Recomendado cada 15-20 días."
+},
+{
+  "_id": 17,
+  "name": "Desensibilizante",
+  "description": "Ayuda a reforzar las defensas de la piel, consiguiendo disminuir progresivamente la sensibilidad y mejorando duraderamente su umbral de tolerancia",
+  "price": 400.00,
+  "images": {
+    "primary": "img1_desensibilizante.jpg",
+    "secondary": "img2_desensibilizante.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tratamiento específico para pieles sensibles con productos hipoalergénicos. Incluye diagnóstico previo. Duración: 60 minutos. Series de 4-6 sesiones."
+},
+{
+  "_id": 18,
+  "name": "Despigmentante",
+  "description": "Ideal para aclarar la piel y eliminar las manchas provocadas por el sol.",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_despigmentante.jpg",
+    "secondary": "img2_despigmentante.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tratamiento con activos despigmentantes y protección solar. Incluye diagnóstico de manchas. Duración: 60 minutos. Serie de 8-12 sesiones recomendadas."
+},
+{
+  "_id": 19,
+  "name": "Contorno de Ojos",
+  "description": "Ayuda a reducir ojeras y líneas de expresión.",
+  "price": 550.00,
+  "images": {
+    "primary": "img1_contorno_ojos.jpg",
+    "secondary": "img2_contorno_ojos.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tratamiento específico para el área periocular. Incluye masaje drenante y productos específicos. Duración: 45 minutos. Series de 6-8 sesiones recomendadas."
+},
+{
+  "_id": 20,
+  "name": "Control de Acné",
+  "description": "Ayuda a reducir el acné a través de equipos y productos a nivel cosmecéutico con acción bactericida, oxigenante y cicatrizante.",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_control_acne.jpg",
+    "secondary": "img2_control_acne.jpg"
+  },
+  "category": "Faciales",
+  "information": "Incluye limpieza profunda, alta frecuencia, mascarilla secante y productos normalizadores. Duración: 60 minutos. Plan personalizado según grado de acné."
+},
+{
+  "_id": 21,
+  "name": "Reafirmación Facial",
+  "description": "Ayuda a reducir las arrugas y los efectos del envejecimiento.",
+  "price": 550.00,
+  "images": {
+    "primary": "img1_reafirmacion_facial.jpg",
+    "secondary": "img2_reafirmacion_facial.jpg"
+  },
+  "category": "Faciales",
+  "information": "Combina radiofrecuencia, ultrasonido y productos tensores. Incluye masaje lifting. Duración: 75 minutos. Serie de 8-12 sesiones recomendadas."
+},
+{
+  "_id": 22,
+  "name": "Microdermoabrasión",
+  "description": "Tratamiento estético que mejora el aspecto de nuestra piel. Es muy similar al peeling químico, quita la piel superficial donde se encuentran las imperfecciones.",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_microdermoabrasion.jpg",
+    "secondary": "img2_microdermoabrasion.jpg"
+  },
+  "category": "Faciales",
+  "information": "Exfoliación mecánica con punta de diamante. Incluye productos calmantes y protección solar. Duración: 45 minutos. Series de 6-8 sesiones."
+},
+{
+  "_id": 23,
+  "name": "Luz Pulsada",
+  "description": "Tratamiento idoneo para tratar diferentes afecciones de la piel tales como acné, arrugas, pigmentaciones, cicatrices y fragilidad capilar.",
+  "price": 750.00,
+  "images": {
+    "primary": "img1_luz_pulsada.jpg",
+    "secondary": "img2_luz_pulsada.jpg"
+  },
+  "category": "Faciales",
+  "information": "Tecnología IPL personalizada según condición. Incluye gel conductor y productos post-tratamiento. Duración: 30-45 minutos. Plan personalizado según condición."
+},
+{
+  "_id": 24,
+  "name": "Cara Completa",
+  "description": "Depilación láser IPL/SHR para rostro completo",
+  "price": 350.00,
+  "images": {
+    "primary": "img1_depilacion_cara.jpg",
+    "secondary": "img2_depilacion_cara.jpg"
+  },
+  "category": "Depilación",
+  "information": "Incluye todas las zonas del rostro. Tecnología dual IPL/SHR. Duración: 30 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 25,
+  "name": "Bigote",
+  "description": "Depilación láser IPL/SHR para bigote",
+  "price": 150.00,
+  "images": {
+    "primary": "img1_depilacion_bigote.jpg",
+    "secondary": "img2_depilacion_bigote.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento específico para zona del bigote. Incluye gel conductor. Duración: 15 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 26,
+  "name": "Mentón",
+  "description": "Depilación láser IPL/SHR para zona del mentón",
+  "price": 150.00,
+  "images": {
+    "primary": "img1_depilacion_menton.jpg",
+    "secondary": "img2_depilacion_menton.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento específico para zona del mentón. Incluye gel conductor. Duración: 15 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 27,
+  "name": "Patillas",
+  "description": "Depilación láser IPL/SHR para patillas",
+  "price": 150.00,
+  "images": {
+    "primary": "img1_depilacion_patillas.jpg",
+    "secondary": "img2_depilacion_patillas.jpg"
+  },
+  "category": "Depilación",
+  "information": "Depilación precisa de la zona de patillas. Incluye gel conductor. Duración: 15 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 28,
+  "name": "Axilas",
+  "description": "Depilación láser IPL/SHR para axilas",
+  "price": 250.00,
+  "images": {
+    "primary": "img1_depilacion_axilas.jpg",
+    "secondary": "img2_depilacion_axilas.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento completo de axilas. Tecnología dual IPL/SHR. Duración: 20 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 29,
+  "name": "Brazos Completos",
+  "description": "Depilación láser IPL/SHR para brazos",
+  "price": 450.00,
+  "images": {
+    "primary": "img1_depilacion_brazos.jpg",
+    "secondary": "img2_depilacion_brazos.jpg"
+  },
+  "category": "Depilación",
+  "information": "Incluye desde hombros hasta muñecas. Tecnología dual IPL/SHR. Duración: 45 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 30,
+  "name": "Medios Brazos",
+  "description": "Depilación láser IPL/SHR para medios brazos",
+  "price": 300.00,
+  "images": {
+    "primary": "img1_depilacion_medios_brazos.jpg",
+    "secondary": "img2_depilacion_medios_brazos.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento desde codo hasta muñeca. Tecnología dual IPL/SHR. Duración: 30 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 31,
+  "name": "Pecho",
+  "description": "Depilación láser IPL/SHR para pecho",
+  "price": 400.00,
+  "images": {
+    "primary": "img1_depilacion_pecho.jpg",
+    "secondary": "img2_depilacion_pecho.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento completo de zona pectoral. Tecnología dual IPL/SHR. Duración: 30 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 32,
+  "name": "Abdomen",
+  "description": "Depilación láser IPL/SHR para abdomen",
+  "price": 400.00,
+  "images": {
+    "primary": "img1_depilacion_abdomen.jpg",
+    "secondary": "img2_depilacion_abdomen.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento completo de zona abdominal. Tecnología dual IPL/SHR. Duración: 30 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 33,
+  "name": "Espalda Completa",
+  "description": "Depilación láser IPL/SHR para espalda",
+  "price": 500.00,
+  "images": {
+    "primary": "img1_depilacion_espalda.jpg",
+    "secondary": "img2_depilacion_espalda.jpg"
+  },
+  "category": "Depilación",
+  "information": "Incluye espalda completa y hombros. Tecnología dual IPL/SHR. Duración: 45 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 34,
+  "name": "Media Espalda",
+  "description": "Depilación láser IPL/SHR para media espalda",
+  "price": 350.00,
+  "images": {
+    "primary": "img1_depilacion_media_espalda.jpg",
+    "secondary": "img2_depilacion_media_espalda.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento de zona superior o inferior de espalda. Tecnología dual IPL/SHR. Duración: 30 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 35,
+  "name": "Piernas Completas",
+  "description": "Depilación láser IPL/SHR para piernas completas",
+  "price": 800.00,
+  "images": {
+    "primary": "img1_depilacion_piernas.jpg",
+    "secondary": "img2_depilacion_piernas.jpg"
+  },
+  "category": "Depilación",
+  "information": "Incluye desde ingles hasta tobillos. Tecnología dual IPL/SHR. Duración: 90 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "_id": 36,
+  "name": "Medias Piernas",
+  "description": "Depilación láser IPL/SHR para medias piernas",
+  "price": 450.00,
+  "images": {
+    "primary": "img1_depilacion_medias_piernas.jpg",
+    "secondary": "img2_depilacion_medias_piernas.jpg"
+  },
+  "category": "Depilación",
+  "information": "Tratamiento desde rodilla hasta tobillo. Tecnología dual IPL/SHR. Duración: 45 minutos. Serie de 6-8 sesiones cada 4-6 semanas."
+},
+{
+  "id": 37,
+  "name": "Relajante",
+  "description": "Ayuda relajar el cuerpo y la mente, promoviendo la respiración profunda y eliminando el sentimiento de ansiedad.",
+  "price": 500,
+  "img1": "img1_masaje_relajante.jpg",
+  "img2": "img2_masaje_relajante.jpg",
+  "category": "Masajes",
+  "information": "Masaje con técnicas suaves y envolventes. Incluye aromaterapia y musicoterapia. Duración: 60 minutos. Se puede realizar semanalmente."
+},
+{
+  "id": 38,
+  "name": "Descontracturante",
+  "description": "Ayuda a relajar la musculatura y disolver las contracturas que se producen por estrés, exceso de ejercicio, malas posturas, falta de descanso o una vida demasiado sedentaria.",
+  "price": 650,
+  "img1": "img1_masaje_descontracturante.jpg",
+  "img2": "img2_masaje_descontracturante.jpg",
+  "category": "Masajes",
+  "information": "Masaje profundo en zonas específicas de tensión. Incluye aceites descontracturantes. Duración: 75 minutos. Frecuencia según necesidad."
+},
+{
+  "id": 39,
+  "name": "Deportivo",
+  "description": "Masaje intenso que ayuda a preparar los músculos antes del ejercicio y a recuperarlos después de la actividad física",
+  "price": 700,
+  "img1": "img1_masaje_deportivo.jpg",
+  "img2": "img2_masaje_deportivo.jpg",
+  "category": "Masajes",
+  "information": "Técnicas específicas para deportistas. Incluye aceites específicos para deporte. Duración: 75 minutos. Recomendado antes o después de actividad física."
+},
+{
+  "id": 40,
+  "name": "Piedras Calientes",
+  "description": "Terapia que combina el masaje tradicional con el uso de piedras calientes de origen volcánico",
+  "price": 800,
+  "img1": "img1_masaje_piedras.jpg",
+  "img2": "img2_masaje_piedras.jpg",
+  "category": "Masajes",
+  "information": "Incluye set completo de piedras volcánicas y aceites esenciales. Duración: 90 minutos. Se puede realizar cada 15-20 días."
+},
+{
+  "id": 41,
+  "name": "Reflexología",
+  "description": "Técnica de masaje terapéutico basada en la estimulación de puntos específicos en pies y manos",
+  "price": 400,
+  "img1": "img1_reflexologia.jpg",
+  "img2": "img2_reflexologia.jpg",
+  "category": "Masajes",
+  "information": "Masaje especializado en zonas reflejas. Incluye cremas específicas para pies. Duración: 45 minutos. Recomendado semanalmente."
+},
+{
+  "id": 42,
+  "name": "Drenaje Linfático Manual",
+  "description": "Técnica específica de masaje que ayuda a eliminar líquidos y toxinas",
+  "price": 600,
+  "img1": "img1_drenaje_manual.jpg",
+  "img2": "img2_drenaje_manual.jpg",
+  "category": "Masajes",
+  "information": "Masaje suave siguiendo el sistema linfático. Incluye aceites drenantes. Duración: 60 minutos. Series de 6-8 sesiones recomendadas."
+},
+{
+  "id": 43,
+  "name": "Prenatal",
+  "description": "Masaje específicamente diseñado para embarazadas, ayuda a aliviar molestias propias de la gestación",
+  "price": 600,
+  "img1": "img1_masaje_prenatal.jpg",
+  "img2": "img2_masaje_prenatal.jpg",
+  "category": "Masajes",
+  "information": "Técnicas suaves adaptadas al embarazo. Incluye almohadas especiales y aceites seguros para embarazo. Duración: 60 minutos. Consultar frecuencia con médico tratante."
+},
+{
+  "id": 44,
+  "name": "Aromaterapia",
+  "description": "Masaje relajante que incorpora aceites esenciales para potenciar sus beneficios",
+  "price": 650,
+  "img1": "img1_aromaterapia.jpg",
+  "img2": "img2_aromaterapia.jpg",
+  "category": "Masajes",
+  "information": "Combina masaje suave con aceites esenciales terapéuticos. Incluye consulta para selección de aromas. Duración: 75 minutos. Se puede realizar semanalmente."
+},
+{
+  "id": 45,
+  "name": "Shiatsu",
+  "description": "Técnica japonesa que trabaja sobre los puntos de energía del cuerpo",
+  "price": 700,
+  "img1": "img1_shiatsu.jpg",
+  "img2": "img2_shiatsu.jpg",
+  "category": "Masajes",
+  "information": "Presión en puntos específicos del cuerpo. Se realiza sobre futón especial. Duración: 60 minutos. Recomendado cada 15-20 días."
+},
+{
+  "id": 46,
+  "name": "Facial",
+  "description": "Masaje específico para rostro y cuello que ayuda a relajar y tonificar",
+  "price": 400,
+  "img1": "img1_masaje_facial.jpg",
+  "img2": "img2_masaje_facial.jpg",
+  "category": "Masajes",
+  "information": "Técnicas específicas para rostro y cuello. Incluye cremas faciales específicas. Duración: 40 minutos. Se puede realizar semanalmente."
+}]
