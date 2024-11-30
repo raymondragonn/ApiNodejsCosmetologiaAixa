@@ -7,12 +7,42 @@ const validator = require('validator');
 const serviceSchema = new mongoose.Schema({
     name: {
       type: String,
-      required: [true, 'A tour must have a name'],//True lo activa y el mensaje es el que se muestra
+      required: [true, 'nombre de servicio requerido'],//True lo activa y el mensaje es el que se muestra
       unique: true,
       trim: true,
-      maxlength: [40, 'A tour name must have less or equal than 40 characters'],
-      minlength: [10, 'A tour name must have more or equal than 10 characters'],
+      // maxlength: [40, 'A service name must have less or equal than 40 characters'],
+      // minlength: [10, 'A service name must have more or equal than 10 characters'],
       // validate: [validator.isAlpha, 'Tour name must only contain characters']//Valida que solo sean letras //el problema es que no acepta los espacios
+    },
+    description: {
+      type: String,
+      trim: true
+    },
+    price: {
+      type: Number,
+      required: [true, 'El servicio debe tener un precio'],
+    },
+    images: {
+      primary: [String],
+      secondary: {
+        type : [String],
+        default: null
+      }
+    },
+    createAt: {
+      type: Date,
+      default: Date.now(),
+      select: false
+    },
+    category: {
+      type: [String],
+      category: {
+        type: String,
+        enum: ['Corporales', 'Faciales', 'Masajes', 'Depilación'],
+      }
+    },
+    information: {
+      type: [String]
     },
     slug: String,
     // duration: {
@@ -31,50 +61,39 @@ const serviceSchema = new mongoose.Schema({
     //     message: 'Difficulty is either: easy, medium, difficult'
     //   }
     // },
-    ratingsAverage: {
-      type: Number,
-      default: 4.5,
-      min: [1, 'Rating must be above 1.0'],//min y max tambien funciona para fechas
-      max: [5, 'Rating must be below 5.0']
-    },
+    // ratingsAverage: {
+    //   type: Number,
+    //   default: 4.5,
+    //   min: [1, 'Rating must be above 1.0'],//min y max tambien funciona para fechas
+    //   max: [5, 'Rating must be below 5.0']
+    // },
     // ratingsQuantity: {
     //   type: Number,
     //   default: 0
     // },
-    price: {
-      type: Number,
-      required: [true, 'A tour must have a price'],
-    },
-    priceDiscount:{
-      type: Number,
-      validate: {
-        validator: function(val){//Crear tus propias validaciones
-          return val < this.price;//si el discount es menor que el precio te regresa un true sino un false //esta validacion solo valida para cuando creas un nuevo documento
-        },
-        message: 'Discount price ({VALUE}) should be below regular price'
-      }
+    
+    // priceDiscount:{
+    //   type: Number,
+    //   validate: {
+    //     validator: function(val){//Crear tus propias validaciones
+    //       return val < this.price;//si el discount es menor que el precio te regresa un true sino un false //esta validacion solo valida para cuando creas un nuevo documento
+    //     },
+    //     message: 'Discount price ({VALUE}) should be below regular price'
+    //   }
       
-    }, 
-    summary: {
-      type: String,
-      trim: true, //remove the white space at the beginning and the end
-      trim: [true, 'A tour must have a description']
+    // }, 
+    // summary: {
+    //   type: String,
+    //   trim: true, //remove the white space at the beginning and the end
+    //   trim: [true, 'A tour must have a description']
 
-    },
-    description: {
-      type: String,
-      trim: true
-    },
-    imageCover: {
-      type: String,
-      required: [true, 'A tour must have a cover image']
-    },
-    images: [String],
-    createAt: {
-      type: Date,
-      default: Date.now(),
-      select: false
-    },
+    // },
+    
+    // imageCover: {
+    //   type: String,
+    //   required: [true, 'A tour must have a cover image']
+    // },
+    
     // startDates: [Date],
     // secretTour: {
     //   type: Boolean,

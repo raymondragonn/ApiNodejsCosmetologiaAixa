@@ -6,6 +6,7 @@ const morgan = require('morgan');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const serviceRouter = require('./routes/serviceRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
@@ -24,6 +25,7 @@ app.use((req, res, next) => {
 
 
 app.use('/api/v1/services', serviceRouter);
+app.use('/api/v1/users', userRouter);
 
 
 //Es importante el orden de los middleware por eso es que el manejo de las rutas esta hasta el final
