@@ -7,7 +7,6 @@ class APIFeatures {
       const  queryObj = {...this.queryString};//los tres puntos son para hacer una copia del objeto
       const excludeFields = ['page', 'sort', 'limit', 'fields'];
       excludeFields.forEach(el => delete queryObj[el]);
-  
       // console.log(req.query, queryObj);
   
       // 2A) Advanced filtering
