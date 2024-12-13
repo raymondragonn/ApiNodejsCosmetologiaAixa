@@ -36,18 +36,16 @@ exports.signup = catchAsync(async  (req, res, next) => {
 
 exports.login = catchAsync(async (req,res,next) => {
     const {email,password} = req.body;//Para no repetir req.body.email y req.body.password se hace eso para almacenar email y password de req.body
-    //1) Check if email and password exist
     if(!email || !password){
         return next(new AppError('Please provide email and password', 400));
     }
-    //2) Check if user exists && password is correct
     const user = await User.findOne({email: email}).select('+password');//Ya que le habiamos puesto que no lo mosstrara en el modelo se le pone el + para volver a mostrarlo
     //lo que se hace es incryptar la contraseña que el usuario manda y conmpara con la que se tiene en la base de datos
     //('12345678') == $2a$12$W6F5zvQpZuq3tZ7O7Zj2eOJ4ZqF0Q4Y5b6VwP6fzv7v4Y8l7Z4Z5m
     if(!user || !await user.correctPassword(password, user.password)){
         return next(new AppError('Incorrect email or password', 401));
     }
-    //3) If everything is ok, send token to client
+
 
     createAndSendToken(user, 200, res);
     
@@ -55,7 +53,7 @@ exports.login = catchAsync(async (req,res,next) => {
 
 exports.protect = catchAsync(async (req,res,next) => {
     let token
-    //1) Getting token and check of it's there
+
     if(req.headers.authorization && req.headers.authorization.startsWith('Bearer')){
         token = req.headers.authorization.split(' ')[1];
     }
@@ -63,10 +61,10 @@ exports.protect = catchAsync(async (req,res,next) => {
         return next(new AppError('You are not loggen in! Please log in to get access.',401));
     };
     // console.log(token);
-    //2) Validate token que no halla sido modificado
+
     const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
     // console.log(decoded);
-    //3) Check if the user still exists
+
     const currentUser = await User.findById(decoded.id);
     if(!currentUser){
         return next(new AppError('The user belonging to this token does no longer exist.',401));
@@ -75,7 +73,7 @@ exports.protect = catchAsync(async (req,res,next) => {
     if(currentUser.changedPasswordAfter(decoded.iat)){
         return next(new AppError('User recently changed passwod! Please log in agina.',401))
     }
-    //pass de current use to the next middleware
+
     req.user = currentUser;
     next();
 });
