@@ -1,5 +1,6 @@
 const User = require('./../models/userModel');
 const catchAsync = require('./../utils/catchAsync');
+const AppError = require('../utils/appError');
 
 exports.getAllUsers = catchAsync(async(req, res, next) => {
     const users = await User.find();
@@ -17,16 +18,17 @@ exports.getAllUsers = catchAsync(async(req, res, next) => {
 
 exports.createUser = catchAsync(async(req, res) => {
     const newUser = await User.create(req.body);
+
+    if(!newUser){
+        return next(new AppError('Error en la creacion del usuario', 404))
+    }
     res.status(200).json({
         status: 'success',
         data: {
-          usenewUserrs
+          user: newUser
         }
-      });
-    res.status(500).json({
-        status: 'error',
-        message: 'This route is not yet defined'
-    })
+    });
+    
 });
 
 exports.getUser = (req, res) => {

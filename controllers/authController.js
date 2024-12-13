@@ -35,6 +35,7 @@ exports.signup = catchAsync(async  (req, res, next) => {
 });
 
 exports.login = catchAsync(async (req,res,next) => {
+    console.log(req.body);
     const {email,password} = req.body;//Para no repetir req.body.email y req.body.password se hace eso para almacenar email y password de req.body
     //1) Check if email and password exist
     if(!email || !password){
