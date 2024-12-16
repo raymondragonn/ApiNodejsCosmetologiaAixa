@@ -37,18 +37,21 @@ exports.getService = catchAsync( async (req, res,next) => {
     })
 });
   
+exports.createService = catchAsync(async (req, res, next) => {
+  // Valida y filtra solo los campos necesarios
+  const { name, category, price, description, information } = req.body;
 
-exports.createService = catchAsync( async (req, res,next) => {
-    
-  const newService = await Service.create(req.body);
+  if (!name || !category || !price || !description || !information) {
+    return next(new AppError('Todos los campos son obligatorios.', 400)); // Error 400: Bad Request
+  }
+  const newService = await Service.create({ name, category, price, description, information });
+
   res.status(201).json({
-    // 201 means created
     status: 'success',
     data: {
-      service: newService
-    }
+      service: newService,
+    },
   });
-    // res.send('Done'); no se puede enviar dos veces una respuesta
 });
 
 exports.updateService = catchAsync( async (req, res,next) => {

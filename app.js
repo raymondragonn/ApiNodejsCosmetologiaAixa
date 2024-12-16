@@ -1,11 +1,13 @@
 const express = require('express');
 const morgan = require('morgan');
+const cors = require('cors'); // Requiere el paquete cors
 // const connectDB = require('./db');
 
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const serviceRouter = require('./routes/serviceRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
@@ -13,6 +15,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
 
+app.use(cors());
 
 app.use(express.json());
 
@@ -24,6 +27,7 @@ app.use((req, res, next) => {
 
 
 app.use('/api/v1/services', serviceRouter);
+app.use('/api/v1/users', userRouter);
 
 
 //Es importante el orden de los middleware por eso es que el manejo de las rutas esta hasta el final
@@ -63,7 +67,7 @@ app.use(globalErrorHandler);
 
 // const Service = mongoose.model('Service', serviceSchema);
 
-// // Middleware para permitir CORS
+// Middleware para permitir CORS
 // app.use((req, res, next) => {
 //     res.header('Access-Control-Allow-Origin', '*');
 //     res.header("Access-Control-Allow-Headers", "X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Request-Method");
